@@ -1,7 +1,6 @@
 // Copyright 2022 NNTU-CS
 #include <cstdint>
 #include "alg.h"
-#include <cmath>
 
 
 double pown(double value, uint16_t n) {
@@ -50,7 +49,7 @@ double sinn(double x, uint16_t count) {
   double si = 0;
   for (uint16_t i = 1; i <= count; i++) {
     uint16_t k = (i * 2) - 1;
-    si = si + ((pow(-1, i - 1)) * calcItem(x, k));
+    si = si + ((pown(-1, i - 1)) * calcItem(x, k));
   }
   return si;
 }
@@ -59,7 +58,7 @@ double cosn(double x, uint16_t count) {
   double si = 0;
   for (uint16_t i = 1; i <= count; i++) {
     uint16_t k = (i * 2) - 2;
-    si = si + ((pow(-1, i - 1)) * calcItem(x, k));
+    si = si + ((pown(-1, i - 1)) * calcItem(x, k));
   }
   return si;
 }
